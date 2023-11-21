@@ -45,7 +45,7 @@ function TaskEditForm() {
         .then((res) => setTask(res));
     }, []);
 
-    const hndleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         updateTask();
     };
@@ -68,7 +68,7 @@ function TaskEditForm() {
             <label htmlFor="description">Description:</label>
             <input
               id="description"
-              value={game.release_year}
+              value={task.description}
               type="text"
               onChange={handleTextChange}
               placeholder="Task Description"
@@ -142,3 +142,5 @@ function TaskEditForm() {
         </div>
       );
 }
+
+export default TaskEditForm;
