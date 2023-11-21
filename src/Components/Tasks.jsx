@@ -8,7 +8,7 @@ function Tasks() {
 
     const fetchData = async () => {
         try {
-            fetch(`${API}/colors`)
+            fetch(`${API}/Tasks`)
             .then(res => res.json())
             .then(res => {
                 setTasks(res)
@@ -31,3 +31,5 @@ function Tasks() {
         </div>
       );
 }
+
+export default Tasks;
