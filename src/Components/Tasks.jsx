@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import TaskCard from "./TaskCard";
+import Task from "./Task";
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -26,7 +26,7 @@ function Tasks() {
         <div>
           <h2>Task List</h2>
           {tasks.map(task => (
-            <TaskCard key={task.id} task={task} />
+            <Task key={task.id} task={task} />
           ))}
         </div>
       );

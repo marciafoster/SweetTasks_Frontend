@@ -16,11 +16,11 @@
 }
 
 button {
-  background-color: transparent;
+  background-color:#FFD2D2;
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: white;
+  color: #fa405c;
   margin-left: 20px;
 }
 

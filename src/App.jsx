@@ -4,7 +4,7 @@ import { useState } from 'react'
 import NavBar from "./Components/NavBar"
 import Home from "./Components/Pages/Home.jsx";
 import Show from "./Components/Pages/Show.jsx";
-
+import Index from "./Components/Pages/Show.jsx";
 
 
 
@@ -16,7 +16,7 @@ function App() {
             <main>
                 <Routes>
                     <Route path="/" element={<Home/>} />
-                    {/* <Route path="/tasks" element={<Index />} /> */}
+                    <Route path="/tasks" element={<Index />} />
                     <Route path="tasks/:index" element={<Show />} />
                 </Routes>
             </main>

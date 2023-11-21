@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import TaskCard from './TaskCard';
+import Task from './Task';
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -47,7 +47,7 @@ function TaskDetails() {
                         {task.task_name}
                     </h3>
                     <p>
-                        Descriotion: <br />
+                        Description: <br />
                         {task.description}
                     </p>
                     <p>
