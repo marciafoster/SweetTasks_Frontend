@@ -1,0 +1,31 @@
+
+
+.navbar {
+  background-color: #FFD2D2;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.title {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  margin-left: 20px;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+  
