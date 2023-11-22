@@ -53,7 +53,9 @@ function TaskEditForm() {
 
     return (
         <div className="Edit">
-          <form className="edit-form" onSubmit={handleSubmit}>
+           <h2>Edit Task</h2>
+          <form onSubmit={handleSubmit}>
+          <div className="input-group">
             <label htmlFor="name">Task Name:</label>
             <input
               id="name"
@@ -63,9 +65,11 @@ function TaskEditForm() {
               placeholder="Name of Task"
               required
             />
+            </div>
     
             <br />
     
+            <div className="input-group">
             <label htmlFor="description">Description:</label>
             <input
               id="description"
@@ -75,9 +79,11 @@ function TaskEditForm() {
               placeholder="Task Description"
               required
             />
+            </div>
     
             <br />
     
+            <div className="input-group">
             <label htmlFor="assigned_to">Assigned To:</label>
             <input
               id="assigned_to"
@@ -87,9 +93,11 @@ function TaskEditForm() {
               placeholder="Task Assigned To"
               required
             />
+            </div>
     
             <br />
     
+            <div className="input-group">
             <label htmlFor="due_date">Due Date:</label>
             <input
               id="due_date"
@@ -99,9 +107,11 @@ function TaskEditForm() {
               placeholder="Task Due Date"
               required
             />
+            </div>
     
             <br />
     
+            <div className="input-group">
             <label htmlFor="is_complete">Completed:</label>
             <input
               id="is_complete"
@@ -109,9 +119,11 @@ function TaskEditForm() {
               onChange={handleCheckboxChange}
               checked={task.is_complete}
             />
+            </div>
     
             <br />
     
+            <div className="input-group">
             <label htmlFor="priority">Priority Level:</label>
             <input
               id="priority"
@@ -121,9 +133,11 @@ function TaskEditForm() {
               placeholder="Level Of Priority"
               required
             />
+            </div>
     
             <br />
     
+            <div className="input-group">
             <label htmlFor="notes">Notes:</label>
             <input
               id="notes"
@@ -133,6 +147,7 @@ function TaskEditForm() {
               placeholder="Important Notes"
               required
             />
+              </div>
             <br/>
             <button type="submit">Submit</button>
           </form>

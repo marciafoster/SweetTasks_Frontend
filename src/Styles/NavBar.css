@@ -5,15 +5,19 @@
   text-align: center;
   width: 100%;
   top: 0;
-  height: 175px;
+  height: 200px;
   left: 0;
   z-index: 1000;
 }
 
 nav {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center; 
+}
+
+.logo-container {
+  flex: 1; 
 }
 
 .title {
@@ -26,14 +30,8 @@ button {
   cursor: pointer;
   font-size: 16px;
   color: #fa405c;
-  margin-left: auto; 
 }
 
 button:hover {
   text-decoration: underline;
 }
-
-body {
-  margin-top: 75px; /
-}
-

@@ -57,8 +57,11 @@ function TaskNewForm() {
   };
 
   return (
+
     <div className="NewFormContainer">
-      <form onSubmit={handleSubmit}>
+       <h2>Create A New Task</h2>
+      <form onSubmit={handleSubmit} >
+        <div className="input-group">
         <label htmlFor="task_name">Task Name:</label>
         <input
           id="task_name"
@@ -68,7 +71,10 @@ function TaskNewForm() {
           placeholder="Name of Task"
           required
         />
+        </div>
+        <br />
 
+        <div className="input-group">
 <label htmlFor="description">Description:</label>
             <input
               id="description"
@@ -78,9 +84,10 @@ function TaskNewForm() {
               placeholder="Task Description"
               required
             />
-    
+    </div>
             <br />
     
+            <div className="input-group">
             <label htmlFor="assigned_to">Assigned To:</label>
             <input
               id="assigned_to"
@@ -89,10 +96,12 @@ function TaskNewForm() {
               onChange={handleTextChange}
               placeholder="Task Assigned To"
               required
-            />
+           />
+           </div>
+
+            <br /> 
     
-            <br />
-    
+            <div className="input-group">
             <label htmlFor="due_date">Due Date:</label>
             <input
               id="due_date"
@@ -102,19 +111,11 @@ function TaskNewForm() {
               placeholder="Task Due Date"
               required
             />
-    
+            </div>
+            
             <br />
     
-            <label htmlFor="is_complete">Completed:</label>
-            <input
-              id="is_complete"
-              type="checkbox"
-              onChange={handleCheckboxChange}
-              checked={task.is_complete}
-            />
-    
-            <br />
-    
+            <div className="input-group">
             <label htmlFor="priority">Priority Level:</label>
             <input
               id="priority"
@@ -124,9 +125,11 @@ function TaskNewForm() {
               placeholder="Priority Level 1-3"
               required
             />
+            </div>
     
             <br />
     
+            <div className="input-group">
             <label htmlFor="notes">Notes:</label>
             <input
               id="notes"
@@ -136,11 +139,24 @@ function TaskNewForm() {
               placeholder="Important Notes"
               required
             />
+            </div>
+
             <br/>
+            
+            <div className="input-group">
+            <label htmlFor="is_complete">Completed:</label>
+            <input
+              id="is_complete"
+              type="checkbox"
+              onChange={handleCheckboxChange}
+              checked={task.is_complete}  
+            />
+            </div>
+          
+
         <br />
         <button type="submit">Submit</button>
       </form>
-      <br />
       <Link to={`/tasks`}>
         <button>Nevermind!</button>
       </Link>

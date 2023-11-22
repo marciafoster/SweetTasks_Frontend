@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Task from './Task';
+import "../Styles/TaskDetails.css"
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -40,7 +41,6 @@ function TaskDetails() {
 
     return (
         <div className="Task-details">
-            <h1>Task Details</h1>
             <div className="task-details-card">
                 <div className="task-details-description">
                     <h3>
@@ -61,10 +61,10 @@ function TaskDetails() {
                     </p>
                     <p>
                         Completed: <br />
-                        {task.is_complete}
+                        {task.is_complete ? "✅" : "❌"}
                     </p>
                     <p>
-                        Priority Level 1 for high, 2 for medium, 3 for low: <br />
+                        Priority Level <br />
                         {task.priority}
                     </p>
                     <p>
