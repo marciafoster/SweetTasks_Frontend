@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+
 
 const API = import.meta.env.VITE_API_URL;
 
-function TaskEditForm() {
-    let { index } = useParams();
-    const navigate = useNavigate();
-
-    const [task, setTask] = useState({
+function TaskNewForm() {
+  
+  const navigate = useNavigate();
+  const [task, setTask] = useState({
     task_name: "",
     description: "",
     assigned_to: "",
@@ -15,57 +15,60 @@ function TaskEditForm() {
     is_complete: false,
     priority: "",
     notes: ""
-    });
+  });
 
-    const handleTextChange = (event) => {
-        setTask({ ...task, [event.target.id]: event.target.value});
+  const addTask = () => {
+    const taskData = {
+        task_name: task.task_name,
+        description: task.description,
+        assigned_to: task.assigned_to,
+        due_date: task.due_date,
+        is_complete: task.is_complete,
+        priority: task.priority,
+        notes: task.notes,
     };
+    try {
+      fetch(`${API}/tasks`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(taskData)
+      })
+        .then(res => res.json())
+        .then(() => navigate('/tasks'))
+    } catch (error) {
+      return error
+    }
+  };
 
-    const handleCheckboxChange = () => {
-        setTask({ ...task, is_complete: !task.is_complete});
-    };
+  const handleTextChange = (event) => {
+    setTask({ ...task, [event.target.id]: event.target.value });
+  };
 
-    const updateTask = () => {
-        fetch(`${API}/tasks/${index}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(task),
-        })
-        .then((res) => res.json())
-        .then((res) => {
-            navigate(`/tasks/${index}`);
-        });
-    };
+  const handleCheckboxChange = () => {
+    setTask({ ...task, is_complete: !task.is_complete });
+  };
 
-    useEffect(() => {
-        fetch(`${API}/tasks/${index}`)
-        .then((res) => res.json())
-        .then((res) => setTask(res));
-    }, []);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addTask();
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        updateTask();
-    };
+  return (
+    <div className="NewFormContainer">
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Task Name:</label>
+        <input
+          id="name"
+          value={task.name}
+          type="text"
+          onChange={handleTextChange}
+          placeholder="Name of Task"
+          required
+        />
 
-    return (
-        <div className="Edit">
-          <form className="edit-form" onSubmit={handleSubmit}>
-            <label htmlFor="name">Task Name:</label>
-            <input
-              id="name"
-              value={task.task_name}
-              type="text"
-              onChange={handleTextChange}
-              placeholder="Name of Task"
-              required
-            />
-    
-            <br />
-    
-            <label htmlFor="description">Description:</label>
+<label htmlFor="description">Description:</label>
             <input
               id="description"
               value={task.description}
@@ -133,14 +136,15 @@ function TaskEditForm() {
               required
             />
             <br/>
-            <button type="submit">Submit</button>
-          </form>
-          <br />
-          <Link to={`/tasks/${index}`} className="Link-button">
-            <button>Back</button>
-          </Link>
-        </div>
-      );
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+      <br />
+      <Link to={`/tasks`}>
+        <button>Nevermind!</button>
+      </Link>
+    </div>
+  );
 }
 
-export default TaskEditForm;
+export default TaskNewForm;

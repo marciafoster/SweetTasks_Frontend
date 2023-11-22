@@ -14,6 +14,7 @@ function TaskDetails() {
             fetch(`${API}/Tasks/${index}`)
             .then((res) => res.json())
             .then((res) => {
+                console.log(res);
                 setTask(res);
             });
         } catch (error) {
@@ -26,7 +27,7 @@ function TaskDetails() {
     }, [index]);
 
     const handleDelete = () => {
-        fetch(`${API}/games/${index}`, {
+        fetch(`${API}/tasks/${index}`, {
             method: "Delete",
         }).then(() => navigate("/tasks"));
     };
@@ -59,6 +60,10 @@ function TaskDetails() {
                         {task.due_date}
                     </p>
                     <p>
+                        Completed: <br />
+                        {task.is_complete}
+                    </p>
+                    <p>
                         Priority Level 1 for high, 2 for medium, 3 for low: <br />
                         {task.priority}
                     </p>
@@ -66,10 +71,7 @@ function TaskDetails() {
                         Notes: <br />
                         {task.notes}
                     </p>
-                    <p>
-                        Completed: <br />
-                        {task.is_complete}
-                    </p>
+                    
                  </div>
                  <div className="task-details-buttons">
           <Link to={`/tasks`}>

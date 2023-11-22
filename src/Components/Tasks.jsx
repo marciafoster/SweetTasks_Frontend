@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import Task from "./Task";
+import { Link } from "react-router-dom"
+import "../Styles/IndexPage.css";
+import 'typeface-roboto'
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -8,25 +11,27 @@ function Tasks() {
 
     const fetchData = async () => {
         try {
-            fetch(`${API}/Tasks`)
-            .then(res => res.json())
-            .then(res => {
-                setTasks(res)
-            })
+            const response = await fetch(`${API}/Tasks`);
+            const data = await response.json();
+            setTasks(data);
         } catch (error) {
-            return error
+            return error;
         }
-    }
-    //GET all Tasks
+    };
+
     useEffect(() => {
-        fetchData
-    }, [])
+        fetchData();
+    }, []);
 
     return (
         <div>
-          <h2>Task List</h2>
+          <h2 className="task-list-title">Task List</h2>
           {tasks.map(task => (
-            <Task key={task.id} task={task} />
+            <div key={task.id}>
+                <Link to={`/tasks/${task.id}`}>
+                    <h3>{task.task_name}</h3>
+                </Link>
+            </div>
           ))}
         </div>
       );

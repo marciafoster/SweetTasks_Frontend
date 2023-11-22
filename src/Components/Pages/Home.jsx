@@ -1,3 +1,5 @@
+import React from 'react'
+import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div className="Home">
@@ -7,7 +9,12 @@ function Home() {
         Get started by adding your first task and let the baking adventure
         begin!
       </p>
+      <Link to="/tasks">
+        <button>View Tasks</button>
+      </Link>
+      
     </div>
+    
   );
 }
 

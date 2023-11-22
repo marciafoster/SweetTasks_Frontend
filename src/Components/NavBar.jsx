@@ -5,14 +5,14 @@ export default function NavBar() {
     return (
         <div className="navbar">
         <nav>
-            <h1>
+            <h1 className="title">
             <Link to="/">
-            <img src="src/assets/sweetTasks.jpeg" alt="Tasks"
+            <img src="src/assets/sweetTasks.jpeg" alt="Sweet Tasks"
             style={{ width: "250px", height: "250px" }} />
           </Link>
             </h1>
             <button>
-                <Link to="/tasks">New Task</Link>
+                <Link to="/tasks/new">New Task</Link>
             </button> 
         </nav>
        </div>
