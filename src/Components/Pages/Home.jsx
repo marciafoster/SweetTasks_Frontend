@@ -4,13 +4,13 @@ function Home() {
   return (
     <div className="Home">
       <h2>Welcome to SweetTasks, your go-to task manager for busy bakers</h2>
-      <p>Stay organized, and prioritize tasks with ease.</p>
-      <p>
-        Get started by adding your first task and let the baking adventure
+      <h3>Stay organized, and prioritize baking tasks with ease.</h3>
+      <h3>
+        Get started by adding your first task to your task list, using the new task button above. Click view all tasks to view a list of your current tasks and let the baking adventure
         begin!
-      </p>
+      </h3>
       <Link to="/tasks">
-        <button>View Tasks</button>
+        <button>View All Tasks</button>
       </Link>
       
     </div>

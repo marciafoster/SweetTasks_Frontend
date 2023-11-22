@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "../Styles/TaskNewForm.css"
 
 
 const API = import.meta.env.VITE_API_URL;
@@ -58,9 +59,9 @@ function TaskNewForm() {
   return (
     <div className="NewFormContainer">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Task Name:</label>
+        <label htmlFor="task_name">Task Name:</label>
         <input
-          id="name"
+          id="task_name"
           value={task.name}
           type="text"
           onChange={handleTextChange}
@@ -120,7 +121,7 @@ function TaskNewForm() {
               value={task.priority}
               type="integer"
               onChange={handleTextChange}
-              placeholder="Level Of Priority"
+              placeholder="Priority Level 1-3"
               required
             />
     

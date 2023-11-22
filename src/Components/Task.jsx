@@ -8,7 +8,7 @@ function Task({ task }) {
         <p>{task.description}</p>
         <p>{task.assigned_to}</p>
         <p>{task.due_date}</p>
-        <p>{task.is_complete}</p>
+       <p>{task.is_complete ? "✅" : "❌"}</p>
         <p>{task.priority}</p>
         <p>{task.notes}</p>
         

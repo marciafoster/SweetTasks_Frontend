@@ -1,14 +1,19 @@
-
-
 .navbar {
-  background-color: #FFD2D2;
+  background-color: #ffd2d2;
+  position: fixed;
   padding: 10px;
   text-align: center;
-  position: fixed;
   width: 100%;
   top: 0;
+  height: 175px;
   left: 0;
   z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
 }
 
 .title {
@@ -16,16 +21,19 @@
 }
 
 button {
-  background-color:#FFD2D2;
+  background-color: #ffd2d2;
   border: none;
   cursor: pointer;
   font-size: 16px;
   color: #fa405c;
-  margin-left: 20px;
+  margin-left: auto; 
 }
 
 button:hover {
   text-decoration: underline;
 }
 
-  
+body {
+  margin-top: 75px; /
+}
+

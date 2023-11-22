@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('src/assets/sweet_bg.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+  height: 100vh;
+}
+
+
+.App {
+  
+}
+

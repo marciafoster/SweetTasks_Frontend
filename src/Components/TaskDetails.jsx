@@ -44,7 +44,7 @@ function TaskDetails() {
             <div className="task-details-card">
                 <div className="task-details-description">
                     <h3>
-                        Task Name: <br />
+                        <br />
                         {task.task_name}
                     </h3>
                     <p>

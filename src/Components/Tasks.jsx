@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Task from "./Task";
 import { Link } from "react-router-dom"
 import "../Styles/IndexPage.css";
-import 'typeface-roboto'
+
 
 const API = import.meta.env.VITE_API_URL;
 
