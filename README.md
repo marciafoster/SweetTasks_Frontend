@@ -27,3 +27,13 @@ SweetTasks is a React task tracking application with a bakery theme. Manage your
 
    ```bash
    git clone https://github.com/marciafoster/SweetTasks_Frontend
+
+   
+## Deployed Links
+- Frontend https://sweet-tasks.netlify.app
+- Backend https://sweettasks.onrender.com
+
+## Presentation
+
+https://drive.google.com/file/d/1M7Shwt75Hsxl6N4XoPjvz2prnOLTWaES/view?usp=sharing
+
