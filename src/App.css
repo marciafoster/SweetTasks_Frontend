@@ -45,7 +45,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('src/assets/sweet_bg.jpeg'); 
+  background-image: url('../assets/sweet_bg.jpeg'); 
   background-size: cover;
   background-position: center;
   background-repeat: repeat-y;
