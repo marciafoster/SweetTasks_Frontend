@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../Styles/NavBar.css";
-
+import logo from "../assets/sweetTasks.jpeg";
 export default function NavBar() {
   return (
     <div className="navbar">
@@ -9,7 +9,7 @@ export default function NavBar() {
           <h1 className="title">
             <Link to="/">
               <img
-                src="src/assets/sweetTasks.jpeg"
+                src={logo}
                 alt="Sweet Tasks"
                 style={{ width: "180px", height: "180px" }}
               />
