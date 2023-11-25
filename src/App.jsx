@@ -12,7 +12,7 @@ import New from "./Components/Pages/New";
 
 function App() {
   return (
-    <div className="App" style={background}>
+    <div style={{ backgroundImage: background }}>
       <Router>
         <NavBar />
         <main>
